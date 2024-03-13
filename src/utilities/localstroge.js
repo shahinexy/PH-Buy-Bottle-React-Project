@@ -18,4 +18,10 @@ const addToLs = id => {
     saveCartToLs(cart);
 }
 
-export { addToLs, getStorageCard }
+const removeFormLs = id =>{
+    const cart = getStorageCard();
+    const remaining = cart.filter(cardId => cardId !== id);
+    saveCartToLs(remaining);
+}
+
+export { addToLs, getStorageCard, removeFormLs }

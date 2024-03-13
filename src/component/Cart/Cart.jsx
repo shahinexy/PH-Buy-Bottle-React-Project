@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import './Cart.css'
-const Cart = ({addCard}) => {
+const Cart = ({addCard, handleRemoveCard}) => {
     return (
         <div>
             <h3>Card Added: {addCard.length}</h3>
@@ -14,7 +14,8 @@ const Cart = ({addCard}) => {
 };
 
 Cart.propTypes ={
-    addCard : PropTypes.array.isRequired
+    addCard : PropTypes.array.isRequired,
+    handleRemoveCard: PropTypes.func.isRequired
 }
 
 export default Cart;
