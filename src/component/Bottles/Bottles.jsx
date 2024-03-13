@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Bottle from "../Bottle/Bottle";
 import "./Bottles.css";
-import { addToLs, getStorageCard } from "../../utilities/localstroge";
+import { addToLs, getStorageCard, removeFormLs } from "../../utilities/localstroge";
 import Cart from "../Cart/Cart";
 
 const Bottles = () => {
@@ -42,7 +42,12 @@ const Bottles = () => {
 
   // handle remove card
   const handleRemoveCard = (card) => {
-    addToLs(card);
+    // cart remove form web page
+    const remainingCard = bottles.filter(bottle => bottle.id !== card);
+    setBottles(remainingCard);
+
+    // cart remove form local storage
+    removeFormLs(card);
   };
 
   return (
