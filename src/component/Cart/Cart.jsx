@@ -6,7 +6,7 @@ const Cart = ({addCard, handleRemoveCard}) => {
             <h3>Card Added: {addCard.length}</h3>
             <div className="addcard_img">
                 {
-                    addCard.map(card => <div key={card.id}> 
+                    addCard.map(card => <div className='cart-conatiner' key={card.id}> 
                     <img  src={card.img}></img>
                     <button onClick={() => handleRemoveCard(card.id)}>Remove</button>
                     </div> )

@@ -43,8 +43,8 @@ const Bottles = () => {
   // handle remove card
   const handleRemoveCard = (card) => {
     // cart remove form web page
-    const remainingCard = bottles.filter(bottle => bottle.id !== card);
-    setBottles(remainingCard);
+    const remainingCard = addCard.filter(bottle => bottle.id !== card);
+    setAddCard(remainingCard);
 
     // cart remove form local storage
     removeFormLs(card);
